@@ -1,0 +1,4 @@
+C:\Users\Administrator\documents\visual studio 2010\Projects\FolderPermissionsWriter\FolderPermissionsWriter\bin\Debug\FolderPermissionsWriter.exe
+C:\Users\Administrator\documents\visual studio 2010\Projects\FolderPermissionsWriter\FolderPermissionsWriter\bin\Debug\FolderPermissionsWriter.pdb
+C:\Users\Administrator\documents\visual studio 2010\Projects\FolderPermissionsWriter\FolderPermissionsWriter\obj\x86\Debug\FolderPermissionsWriter.exe
+C:\Users\Administrator\documents\visual studio 2010\Projects\FolderPermissionsWriter\FolderPermissionsWriter\obj\x86\Debug\FolderPermissionsWriter.pdb
