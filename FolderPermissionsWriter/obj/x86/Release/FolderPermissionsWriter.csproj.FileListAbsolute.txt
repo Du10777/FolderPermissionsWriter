@@ -2,3 +2,4 @@ C:\Users\Administrator\documents\visual studio 2010\Projects\FolderPermissionsWr
 C:\Users\Administrator\documents\visual studio 2010\Projects\FolderPermissionsWriter\FolderPermissionsWriter\bin\Release\FolderPermissionsWriter.pdb
 C:\Users\Administrator\documents\visual studio 2010\Projects\FolderPermissionsWriter\FolderPermissionsWriter\obj\x86\Release\FolderPermissionsWriter.exe
 C:\Users\Administrator\documents\visual studio 2010\Projects\FolderPermissionsWriter\FolderPermissionsWriter\obj\x86\Release\FolderPermissionsWriter.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\FolderPermissionsWriter\FolderPermissionsWriter\obj\x86\Release\FolderPermissionsWriter.csprojResolveAssemblyReference.cache

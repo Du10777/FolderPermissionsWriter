@@ -50,6 +50,9 @@ namespace FolderPermissionsWriter
 
         static void CopyFolders(string ToFolder)
         {
+            if (!Directory.Exists(ToFolder))////Если, пока работала программа, папка назначения был переименованна или удалена
+                return;//Пропустить создание подкатологов
+
             CopyAccessRules(Config.TemplateFolder, ToFolder);
 
             string[] list = Directory.GetDirectories(Config.TemplateFolder);
