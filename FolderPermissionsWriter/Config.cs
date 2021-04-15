@@ -55,6 +55,11 @@ namespace FolderPermissionsWriter
             lines.Add("Exclusion: " + defaultExclusion3);
             lines.Add("Exclusion: " + defaultExclusion4);
             lines.Add("");
+            lines.Add("# Путь к файлу со списком уже обработанных папок.");
+            lines.Add("# Если его не указать - список будет храниться рядом с файлом программы.");
+            lines.Add("# В этом случае убедитесь, что у пользователя (от имени которого запускается программа) есть право на запись в этот каталог");
+            lines.Add("DBLocation: " + defaultDBLocation);
+            lines.Add("");
             lines.Add("# Путь к файлу с логами. Не обязательный параметр.");
             lines.Add("# Если его не указать - логи будут храниться рядом с файлом программы.");
             lines.Add("# В этом случае убедитесь, что у пользователя (от имени которого запускается программа) есть право на запись в этот каталог");
@@ -114,6 +119,9 @@ namespace FolderPermissionsWriter
                     break;
                 case "Logs":
                     LogsFileName = GetValue(line);
+                    break;
+                case "DBLocation":
+                    DBLocation = GetValue(line);
                     break;
                 case "MaxLogSize":
                     MaxLogSize = StringToULong(GetValue(line));
@@ -195,6 +203,11 @@ namespace FolderPermissionsWriter
             }
 
 
+            if (DBLocation.Length == 0)
+            {
+                string exeFileName = System.Reflection.Assembly.GetExecutingAssembly().Location;
+                DBLocation = exeFileName.Remove(exeFileName.Length - 4) + ".list";
+            }
             if (LogsFileName.Length == 0)
             {
                 string exeFileName = System.Reflection.Assembly.GetExecutingAssembly().Location;
@@ -209,6 +222,7 @@ namespace FolderPermissionsWriter
 
 
         public static string Folder;
+        public static string DBLocation;
         public static string TemplateFolder;
         public static List<string> Exclusions = new List<string>();
         public static string LogsFileName;
@@ -220,6 +234,7 @@ namespace FolderPermissionsWriter
         static string defaultExclusion2 = @"D:\ExampleFolder\_PermanentFolder";
         static string defaultExclusion3 = @"D:\ExampleFolder\_PermanentFolder\";
         static string defaultExclusion4 = "";
+        static string defaultDBLocation = @"D:\FolderPermissionsWriter_DB.txt";
         static string defaultLogsFileName = @"D:\ExampleLogs.txt";
         static long defaultMaxLogSize = 10 * 1024 * 1024;
     }

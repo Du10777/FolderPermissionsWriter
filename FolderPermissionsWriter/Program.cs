@@ -18,10 +18,15 @@ namespace FolderPermissionsWriter
         {
             Config.SilentMode = IsSilent(args);
             Config.Open();
+            DB.Open();
             Log.Open(Config.LogsFileName);
+            Log.Add("--------------------Запуск программы------------------------");
 
             CheckFolder();
 
+            DB.Save();
+
+            Log.Add("--------------------Закрытие программы------------------------");
             Log.Close();
         }
 
@@ -41,6 +46,9 @@ namespace FolderPermissionsWriter
             
             foreach (string ToSubFolder in list)
             {
+                if (DB.IsFolderAlreadyProcessed(ToSubFolder))
+                    continue;
+
                 if (IsFolderInExceptionsList(ToSubFolder))
                     continue;//Пропустить каталоги-исключения
 
